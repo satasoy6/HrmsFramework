@@ -40,7 +40,8 @@ public class ExcelUtility {
 		return sheet.getRow(rowIndex).getCell(colIndex).toString();
 	}
 	
-	public static Object [][] excelIntoArray(String filePath, String sheetName){
+	public static Object [][] excelintoArray(String filePath, String sheetName){
+		
 		openExcel(filePath);
 		loadSheet(sheetName);
 		

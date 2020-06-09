@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.hrms.testbase.BaseClass;
 import com.hrms.utils.CommonMethods;
+import com.hrms.utils.ConfigsReader;
 
 public class LoginPageElements extends CommonMethods {
 
@@ -50,5 +51,8 @@ public class LoginPageElements extends CommonMethods {
 		sendText(username, uid);
 		sendText(password, pwd);
 		click(loginBtn);
+	}
+	public void loginToHRMS() {
+		login.login(ConfigsReader.getProperty("username"), ConfigsReader.getProperty("password"));
 	}
 }

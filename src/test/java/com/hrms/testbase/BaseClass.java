@@ -7,8 +7,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.hrms.utils.ConfigsReader;
 import com.hrms.utils.Constants;
 
@@ -16,13 +22,37 @@ public class BaseClass {
 
 	public static String browser;
 	public static WebDriver driver;
+	public static ExtentReports report;
+	public static ExtentHtmlReporter htmlReport;
+	public static ExtentTest test;
+
+	@BeforeTest(alwaysRun = true)
+	public void generateReport() {
+
+		System.out.println("---------Starting generating Report----------");
+
+		ConfigsReader.readProperties(Constants.CONFIGURATION_FILEPATH);// it is going to read our property file
+
+		htmlReport = new ExtentHtmlReporter(Constants.REPORT_FILEPATH);
+		htmlReport.config().setDocumentTitle(ConfigsReader.getProperty("documentTitle"));
+		htmlReport.config().setReportName(ConfigsReader.getProperty("Hrms Execution Report"));
+		htmlReport.config().setTheme(Theme.DARK);
+
+		report = new ExtentReports();
+		report.attachReporter(htmlReport);
+
+	}
+
+	@AfterTest(alwaysRun = true)
+	public void writeReport() {
+		System.out.println("-----Writing the report-----");
+		report.flush();
+	}
 
 	@BeforeMethod(alwaysRun = true) // to make this method run before every @Test method
 	public static WebDriver setUp() {// if you inherit your class to here you don't need to return.
 		// if you use inheritance you can just extends BaseClass
 		// Otherwise public static WebDriver, and return type will be driver;
-
-		ConfigsReader.readProperties(Constants.CONFIGURATION_FILEPATH);// it is going to read our property file
 
 		switch (ConfigsReader.getProperty("browser").toLowerCase()) {
 

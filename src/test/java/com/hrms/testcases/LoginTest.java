@@ -1,50 +1,29 @@
 package com.hrms.testcases;
-import org.testng.Assert;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import com.hrms.utils.CommonMethods;
 import com.hrms.utils.ConfigsReader;
 
 public class LoginTest extends CommonMethods{
 
-//	@BeforeMethod
-//	public void openBrowser() {
-//		setUp();
-//		initialize();
-//	}
-//	
-//	@AfterMethod
-//	public void closeBrowser() {
-//		tearDown();
-//	}
-	
-	/*
-	 * As an admin I should be able to login to HRMS
-	 * As  an ESS user I should be able to login to HRMS
-	 * As an Invalid user I should see error message
-	 * 		Acceptance criteria:
-	 * 
-	 * 1.When user enters valid username and invalid password "invalid credentials"should be displayed
-	 * 
-	 * 2.When user enters valid username and empty password "Password cannot be empty" should be displayed
-	 * 
-	 * 3.When user enters empty username and valid password "Username cannot be empty" should be displayed
-	 */
-	
+
 	@Test(groups="smoke")
 	public void validAdminLogin() {
+		test.info("Entering valid admin credentials");
 //	LoginPageElements login=new LoginPageElements();
 		login.login(ConfigsReader.getProperty("username"), ConfigsReader.getProperty("password"));
 		
 //		DashBoardPageElements dash=new DashBoardPageElements();
-		
+		test.info("Verifying valid username shows with login with welcome");
 		String expectedUser="Welcome Admin";
 		String actualUser=dash.welcome.getText();
 		Assert.assertEquals(actualUser,expectedUser,"Admin is not Logged in");
 		Assert.assertTrue(actualUser.contains(ConfigsReader.getProperty("username")));
 	}
-	@Test
+	@Test(groups="regression")
 	public void invalidPasswordLogin() {
 		sendText(login.username, ConfigsReader.getProperty("username"));
 		sendText(login.password,"an invalid password");
@@ -63,6 +42,17 @@ public class LoginTest extends CommonMethods{
 		
 		String expected="Username cannot be empty";
 		
-		AssertJUnit.assertEquals(login.errorMsg.getText(), expected,"Error message text doesn't match");
+		Assert.assertEquals(login.errorMsg.getText(), expected,"Error message text doesn't match");
+	}
+	
+	@Test
+	public void timeStamp() {
+		Date d=new Date(0);
+		System.out.println(d.getTime());
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
+		sdf.format(d.getTime());
+		
+		
+		
 	}
 }

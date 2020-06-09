@@ -72,7 +72,7 @@ public class AddemployeeElements extends CommonMethods{
 	public void empDetails(String fname,String lname) {
 		sendText(firstName,fname);
 		sendText(lastName,lname);
-		sendText(chooseFile,ConfigsReader.getProperty("filePath"));
+	//	sendText(chooseFile,ConfigsReader.getProperty("filePath"));
 	}
 	
 	public void createLoginDetails() {

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="7" total="10" passed="2" failed="0" skipped="1">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-06-02T21:17:11 EDT" name="Smoke Suite" finished-at="2020-06-02T21:17:22 EDT" duration-ms="10527">
+    <groups>
+      <group name="smoke">
+        <method signature="LoginTest.validAdminLogin()[pri:0, instance:com.hrms.testcases.LoginTest@2f465398]" name="validAdminLogin" class="com.hrms.testcases.LoginTest"/>
+      </group> <!-- smoke -->
+    </groups>
+    <test started-at="2020-06-02T21:17:11 EDT" name="Smoke Test" finished-at="2020-06-02T21:17:22 EDT" duration-ms="10527">
+      <class name="com.hrms.testcases.LoginTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.hrms.testcases.LoginTest@2f465398]" started-at="2020-06-02T21:17:12 EDT" name="setUp" finished-at="2020-06-02T21:17:18 EDT" duration-ms="6182" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="validAdminLogin()[pri:0, instance:com.hrms.testcases.LoginTest@2f465398]" started-at="2020-06-02T21:17:18 EDT" name="validAdminLogin" finished-at="2020-06-02T21:17:20 EDT" duration-ms="2376" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validAdminLogin -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.hrms.testcases.LoginTest@2f465398]" started-at="2020-06-02T21:17:21 EDT" name="tearDown" finished-at="2020-06-02T21:17:21 EDT" duration-ms="199" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.hrms.testcases.LoginTest -->
+      <class name="com.hrms.testcases.AddEmployeeTest">
+        <test-method is-config="true" signature="generateReport()[pri:0, instance:com.hrms.testcases.AddEmployeeTest@1ebd319f]" started-at="2020-06-02T21:17:11 EDT" name="generateReport" finished-at="2020-06-02T21:17:12 EDT" duration-ms="248" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generateReport -->
+        <test-method is-config="true" signature="writeReport()[pri:0, instance:com.hrms.testcases.AddEmployeeTest@1ebd319f]" started-at="2020-06-02T21:17:21 EDT" name="writeReport" finished-at="2020-06-02T21:17:22 EDT" duration-ms="431" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- writeReport -->
+      </class> <!-- com.hrms.testcases.AddEmployeeTest -->
+    </test> <!-- Smoke Test -->
+  </suite> <!-- Smoke Suite -->
+  <suite started-at="2020-06-02T21:17:22 EDT" name="Regression Suite" finished-at="2020-06-02T21:17:32 EDT" duration-ms="10122">
+    <groups>
+      <group name="addEmp">
+        <method signature="AddEmployeeTest.addEmployee(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.hrms.testcases.AddEmployeeTest@5552768b]" name="addEmployee" class="com.hrms.testcases.AddEmployeeTest"/>
+      </group> <!-- addEmp -->
+      <group name="homework">
+        <method signature="AddEmployeeTest.addEmployee(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.hrms.testcases.AddEmployeeTest@5552768b]" name="addEmployee" class="com.hrms.testcases.AddEmployeeTest"/>
+      </group> <!-- homework -->
+      <group name="regression">
+        <method signature="AddEmployeeTest.addEmployee(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.hrms.testcases.AddEmployeeTest@5552768b]" name="addEmployee" class="com.hrms.testcases.AddEmployeeTest"/>
+      </group> <!-- regression -->
+    </groups>
+    <test started-at="2020-06-02T21:17:22 EDT" name="Regression Test" finished-at="2020-06-02T21:17:32 EDT" duration-ms="10122">
+      <class name="com.hrms.testcases.AddEmployeeTest">
+        <test-method is-config="true" signature="generateReport()[pri:0, instance:com.hrms.testcases.AddEmployeeTest@5552768b]" started-at="2020-06-02T21:17:22 EDT" name="generateReport" finished-at="2020-06-02T21:17:22 EDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generateReport -->
+        <test-method signature="addEmployee(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.hrms.testcases.AddEmployeeTest@5552768b]" started-at="2020-06-02T21:17:23 EDT" name="addEmployee" data-provider="userDataFromExcel" finished-at="2020-06-02T21:17:23 EDT" duration-ms="0" status="SKIP">
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[java.lang.NullPointerException]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: java.lang.NullPointerException
+at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:51)
+at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:147)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:801)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:744)
+at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:59)
+at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:38)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:783)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1378)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:377)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:138)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:465)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:451)
+Caused by: java.lang.NullPointerException
+at com.hrms.utils.ExcelUtility.cellData(ExcelUtility.java:40)
+at com.hrms.utils.ExcelUtility.excelintoArray(ExcelUtility.java:58)
+at com.hrms.testcases.AddEmployeeTest.getData2(AddEmployeeTest.java:74)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:78)
+at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:47)
+... 29 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addEmployee -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.hrms.testcases.AddEmployeeTest@5552768b]" started-at="2020-06-02T21:17:23 EDT" name="setUp" finished-at="2020-06-02T21:17:26 EDT" duration-ms="3427" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="requiredFields()[pri:0, instance:com.hrms.testcases.AddEmployeeTest@5552768b]" started-at="2020-06-02T21:17:26 EDT" name="requiredFields" finished-at="2020-06-02T21:17:31 EDT" duration-ms="5224" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- requiredFields -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.hrms.testcases.AddEmployeeTest@5552768b]" started-at="2020-06-02T21:17:32 EDT" name="tearDown" finished-at="2020-06-02T21:17:32 EDT" duration-ms="156" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="writeReport()[pri:0, instance:com.hrms.testcases.AddEmployeeTest@5552768b]" started-at="2020-06-02T21:17:32 EDT" name="writeReport" finished-at="2020-06-02T21:17:32 EDT" duration-ms="95" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- writeReport -->
+      </class> <!-- com.hrms.testcases.AddEmployeeTest -->
+    </test> <!-- Regression Test -->
+  </suite> <!-- Regression Suite -->
+</testng-results>

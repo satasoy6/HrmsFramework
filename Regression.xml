@@ -6,16 +6,11 @@
 
 	</listeners>
 	<test thread-count="5" name="Regression Test">
-		<groups>
-			<run>
-				<include name="regression">
-				</include>
 
-			</run>
-
-		</groups>
-		<packages>
-			<package name="com.hrms.testcases"></package>
-		</packages>
+		<classes>
+			<class name="com.hrms.testcases.AddEmployeeTest"/>
+			
+		</classes>
+		
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

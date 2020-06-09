@@ -18,10 +18,11 @@ public class DashBoardPageElements extends CommonMethods{
 	@FindBy(xpath = "//a[@id='menu_pim_addEmployee']")
 	public WebElement addEmp;
 	
-	@FindBy(xpath = "//a[@id='menu_pim_viewPimModule']")
+	@FindBy(id = "menu_pim_viewPimModule")
 	public WebElement PIM;
 
-
+	@FindBy(linkText="Reports")//click on reports
+	public WebElement reports;
 	
 	public DashBoardPageElements(){
 		PageFactory.initElements(BaseClass.driver, this);
@@ -30,6 +31,10 @@ public class DashBoardPageElements extends CommonMethods{
 	public void navigateToAddEmployee() {
 		jsClick(PIM);
 		jsClick(addEmp);
+	}
+	public void navigateToAddReports() {
+		jsClick(PIM);
+		jsClick(reports);
 	}
 }
 

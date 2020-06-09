@@ -13,6 +13,7 @@
     <classes>
       <class name="com.hrms.testcases.LoginTest">
         <methods>
+          <include name="writeReport"/>
           <include name="tearDown"/>
           <include name="validAdminLogin"/>
           <include name="setUp"/>

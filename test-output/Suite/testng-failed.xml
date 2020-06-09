@@ -4,25 +4,17 @@
   <listeners>
     <listener class-name="com.hrms.testbase.Listener"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="Regression Test(failed)">
     <classes>
-      <class name="com.hrms.testcases.AddEmployeeTest">
+      <class name="com.hrms.testcases.CreateReportTest">
         <methods>
-          <include name="addEmployee"/>
+          <include name="generateReport"/>
+          <include name="writeReport"/>
+          <include name="addReport" invocation-numbers="0"/>
           <include name="tearDown"/>
-          <include name="requiredFields"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- com.hrms.testcases.AddEmployeeTest -->
-      <class name="com.hrms.testcases.LoginTest">
-        <methods>
-          <include name="invalidPasswordLogin"/>
-          <include name="tearDown"/>
-          <include name="emptyUsernameLogin"/>
-          <include name="validAdminLogin"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.hrms.testcases.LoginTest -->
+      </class> <!-- com.hrms.testcases.CreateReportTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Regression Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

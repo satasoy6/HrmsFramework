@@ -1,10 +1,13 @@
 package com.hrms.utils;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
@@ -242,17 +245,24 @@ public class CommonMethods extends PageInitializer{
 	 * This method will take a screenshot
 	 * @param filename
 	 */
-	public static void takeScreenShot(String filename) {
+	public static String takeScreenshot(String filename) {
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File file = ts.getScreenshotAs(OutputType.FILE);
+		String destinationFile = Constants.SCREENSHOT_FILEPATH + filename + getTimeStamp() + ".png";
+
 		try {
-			Files.copy(file, new File("screenshot/" + filename + ".png"));
+			FileUtils.copyFile(file, new File(destinationFile));
 		} catch (Exception ex) {
 			System.out.println("Cannot take screenshot!");
 		}
-		
-	}
 
+		return destinationFile;
+	}
+	public static String getTimeStamp() {
+		Date date=new Date();
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
+		return sdf.format(date.getTime());
+	}
 	public static void wait(int second) {
 		try {
 			Thread.sleep(second * 1000);
